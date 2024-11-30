@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vanakkam-world
+  labels:
+    app: vanakkam-world
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vanakkam-world
+  template:
+    metadata:
+      labels:
+        app: vanakkam-world
+    spec:
+      containers:
+      - name: vanakkam-world
+        image: cubensquare/vanakkam-world:latest
+        ports:
+        - containerPort: 8080
